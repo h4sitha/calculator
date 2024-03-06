@@ -56,11 +56,11 @@ clearBtn.addEventListener('click', (e) => {
 })
 
 backspaceBtn.addEventListener('click', () => {
-    if (!operator) {
-        num1 = num1.substring(0, num1.length - 1);
+    if (num1 && !answer) {
+        num1 = num1.toString().substring(0, num1.length - 1);
         updateDisplay (parseInt(num1));
-    } else {
-        num2 = num2.substring(0, num2.length - 1);
+    } else if (num2) {
+        num2 = num2.toString().substring(0, num2.length - 1);
         updateDisplay (parseInt(num2));
     }
 })
