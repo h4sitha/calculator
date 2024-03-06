@@ -1,12 +1,18 @@
 body {
     font-family: Arial, sans-serif;
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    background-color: hsla(0, 0%, 0%, 0.5);
 }
 
 main {
-    /* border: 1px solid red; */
     width: 500px;
-    /* height: 500px; */
     padding: 20px;
+    background-color: hsl(0, 0%, 80%);
+    box-shadow: 0 0 50px hsla(0, 0%, 0%, 0.3);
 }
 
 #btn-container {
@@ -34,7 +40,6 @@ button {
 
 .number {
     background-color: hsla(26, 93%, 80%);
-    /* font-weight: bold; */
 }
 
 .operator,
@@ -59,8 +64,4 @@ button {
     background-color: hsl(0, 0%, 95%);
     color: hsl(0, 0%, 15%);
     padding: 30px 20px;
-}
-
-main {
-    background-color: hsl(0, 0%, 80%);
 }
