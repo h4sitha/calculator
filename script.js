@@ -1,5 +1,5 @@
-let num1 = 0;
-let num2 = 0;
+let num1 = "";
+let num2 = "";
 let operator;
 let answer;
 
@@ -16,30 +16,39 @@ numbersBtns.forEach((button) => {
         if (!operator) {
 
             if (answer) {
-                num1 = 0;
-                answer = 0;
+                num1 = "";
+                answer = "";
             }
 
             if (e.target.id === '.') {
                 if (!num1.toString().includes('.')) {
                     num1 += e.target.id;
                 }
+            } else if (e.target.id === '0') {
+                if (num1) {
+                    num1 += e.target.id;
+                }
             } else {
                 num1 += e.target.id;
             }
             
-            updateDisplay (parseFloat(num1));
+            updateDisplay (num1);
+            
         } else if (operator) {
 
             if (e.target.id === '.') {
                 if (!num2.toString().includes('.')) {
                     num2 += e.target.id;
                 }
+            } else if (e.target.id === '0') {
+                if (num1) {
+                    num1 += e.target.id;
+                }
             } else {
                 num2 += e.target.id;
             }
 
-            updateDisplay (parseFloat(num2));
+            updateDisplay (num2);
         }
     })
 })
@@ -66,8 +75,8 @@ equalBtn.addEventListener('click', (e) => {
 })
 
 clearBtn.addEventListener('click', (e) => {
-    num1 = 0;
-    num2 = 0;
+    num1 = "";
+    num2 = "";
     operator = "";
     updateDisplay(0);
 })
@@ -75,10 +84,10 @@ clearBtn.addEventListener('click', (e) => {
 backspaceBtn.addEventListener('click', () => {
     if (num1 && !answer) {
         num1 = num1.toString().substring(0, num1.length - 1);
-        updateDisplay (parseFloat(num1));
+        updateDisplay (num1);
     } else if (num2) {
         num2 = num2.toString().substring(0, num2.length - 1);
-        updateDisplay (parseFloat(num2));
+        updateDisplay (num2);
     }
 })
 
