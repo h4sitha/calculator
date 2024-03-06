@@ -9,6 +9,7 @@ const numbersBtns = document.querySelectorAll('.number');
 const operatorBtns = document.querySelectorAll('.operator');
 const equalBtn = document.querySelector('#equal');
 const clearBtn = document.querySelector('#clear');
+const backspaceBtn = document.querySelector('#backspace');
 
 numbersBtns.forEach((button) => {
     button.addEventListener('click', (e) => {
@@ -40,6 +41,10 @@ clearBtn.addEventListener('click', (e) => {
     num2 = 0;
     operator = "";
     updateDisplay("ANSWER");
+})
+
+backspaceBtn.addEventListener('click', () => {
+    console.log("backspace button clicked!");
 })
 
 function updateDisplay (num) {
