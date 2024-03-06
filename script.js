@@ -31,7 +31,8 @@ operatorBtns.forEach((button) => {
 equalBtn.addEventListener('click', (e) => {
     operate(num1, num2, operator);
     updateDisplay(answer);
-    console.log(answer);
+    num1 = answer;
+    num2 = 0;
 })
 
 clearBtn.addEventListener('click', (e) => {
