@@ -12,12 +12,12 @@ const clearBtn = document.querySelector('#clear');
 
 numbersBtns.forEach((button) => {
     button.addEventListener('click', (e) => {
-        if (!num1) {
-            num1 = parseInt(e.target.id);
-            updateDisplay (num1);
-        } else if (!num2) {
-            num2 = parseInt(e.target.id);
-            updateDisplay (num2);
+        if (!operator) {
+            num1 += e.target.id;
+            updateDisplay (parseInt(num1));
+        } else if (operator) {
+            num2 += e.target.id;
+            updateDisplay (parseInt(num2));
         }
     })
 })
@@ -64,16 +64,16 @@ function operate (num1, num2, operator) {
 }
 
 function add (a, b) {
-    return a + b;
+    return parseInt(a) + parseInt(b);
 }
 
 function subtract (a, b) {
-    return a - b;
+    return parseInt(a) - parseInt(b);
 }
 
 function multiply (a, b) {
-    return a * b;
+    return parseInt(a) * parseInt(b);
 }
 function divide (a, b) {
-    return a / b;
+    return parseInt(a) / parseInt(b);
 }
