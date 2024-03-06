@@ -36,7 +36,10 @@ equalBtn.addEventListener('click', (e) => {
 })
 
 clearBtn.addEventListener('click', (e) => {
-    console.log(e.target.id);
+    num1 = 0;
+    num2 = 0;
+    operator = "";
+    updateDisplay("ANSWER");
 })
 
 function updateDisplay (num) {
