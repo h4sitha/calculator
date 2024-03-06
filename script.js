@@ -30,10 +30,11 @@ operatorBtns.forEach((button) => {
 })
 
 equalBtn.addEventListener('click', (e) => {
+
     if (num2) {
         operate(num1, num2, operator);
         updateDisplay(answer);
-        num1 = answer;
+        num1 = (answer === "ERROR") ? 0 : answer;
         num2 = 0;
         operator = "";
     } else if (num1 && operator) {
@@ -48,7 +49,7 @@ clearBtn.addEventListener('click', (e) => {
     num1 = 0;
     num2 = 0;
     operator = "";
-    updateDisplay("ANSWER");
+    updateDisplay(0);
 })
 
 backspaceBtn.addEventListener('click', () => {
@@ -94,5 +95,9 @@ function multiply (a, b) {
     return parseInt(a) * parseInt(b);
 }
 function divide (a, b) {
+    if (parseInt(b) === 0) {
+        return "ERROR";
+    } else {
     return parseInt(a) / parseInt(b);
+    }
 }
