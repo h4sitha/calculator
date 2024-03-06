@@ -89,10 +89,18 @@ clearBtn.addEventListener('click', (e) => {
 backspaceBtn.addEventListener('click', () => {
     if (!num2 && !answer) {
         num1 = num1.toString().substring(0, num1.length - 1);
-        updateDisplay (num1);
+        if (num1) {
+            updateDisplay (num1);
+        } else {
+            updateDisplay (0);
+        }
     } else if (num2) {
         num2 = num2.toString().substring(0, num2.length - 1);
-        updateDisplay (num2);
+        if (num2) {
+            updateDisplay (num2);
+        } else {
+            updateDisplay (0);
+        }
     }
 })
 
