@@ -55,11 +55,16 @@ numbersBtns.forEach((button) => {
 
 operatorBtns.forEach((button) => {
     button.addEventListener('click', (e) => {
+        if (num1 && num2 && operator) {
+            runCalculation ();
+        }
         operator = e.target.id;
     })
 })
 
-equalBtn.addEventListener('click', (e) => {
+equalBtn.addEventListener('click', runCalculation)
+
+function runCalculation () {
     if (num2) {
         operate(num1, num2, operator);
         updateDisplay(answer);
@@ -72,7 +77,7 @@ equalBtn.addEventListener('click', (e) => {
         num1 = answer;
         operator = "";
     }
-})
+}
 
 clearBtn.addEventListener('click', (e) => {
     num1 = "";
