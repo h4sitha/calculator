@@ -30,10 +30,18 @@ operatorBtns.forEach((button) => {
 })
 
 equalBtn.addEventListener('click', (e) => {
-    operate(num1, num2, operator);
-    updateDisplay(answer);
-    num1 = answer;
-    num2 = 0;
+    if (num2) {
+        operate(num1, num2, operator);
+        updateDisplay(answer);
+        num1 = answer;
+        num2 = 0;
+        operator = "";
+    } else if (num1 && operator) {
+        operate(num1, num1, operator);
+        updateDisplay(answer);
+        num1 = answer;
+        operator = "";
+    }
 })
 
 clearBtn.addEventListener('click', (e) => {
