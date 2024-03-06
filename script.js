@@ -1,5 +1,5 @@
-let num1;
-let num2;
+let num1 = 0;
+let num2 = 0;
 let operator;
 let answer;
 
@@ -12,7 +12,11 @@ const clearBtn = document.querySelector('#clear');
 
 numbersBtns.forEach((button) => {
     button.addEventListener('click', (e) => {
-        console.log(e.target.id);
+        if (!num1) {
+            num1 = parseInt(e.target.id);
+        } else if (!num2) {
+            num2 = parseInt(e.target.id);
+        }
     })
 })
 
