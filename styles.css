@@ -12,3 +12,14 @@ main {
     display: flex;
     flex-wrap: wrap;
 }
+
+.number,
+.operator,
+#backspace {
+    width: calc(100%/4);
+}
+
+#clear,
+#equal {
+    width: calc((100%/4)*2);
+}
