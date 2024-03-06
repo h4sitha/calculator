@@ -14,8 +14,10 @@ numbersBtns.forEach((button) => {
     button.addEventListener('click', (e) => {
         if (!num1) {
             num1 = parseInt(e.target.id);
+            updateDisplay (num1);
         } else if (!num2) {
             num2 = parseInt(e.target.id);
+            updateDisplay (num2);
         }
     })
 })
@@ -28,12 +30,17 @@ operatorBtns.forEach((button) => {
 
 equalBtn.addEventListener('click', (e) => {
     operate(num1, num2, operator);
+    updateDisplay(answer);
     console.log(answer);
 })
 
 clearBtn.addEventListener('click', (e) => {
     console.log(e.target.id);
 })
+
+function updateDisplay (num) {
+    display.textContent = num;
+}
 
 function operate (num1, num2, operator) {
     switch (operator) {
