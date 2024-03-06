@@ -22,7 +22,7 @@ numbersBtns.forEach((button) => {
 
             if (e.target.id === '.') {
                 if (!num1.toString().includes('.')) {
-                    num1 += e.target.id;
+                    num1 += (num1) ? e.target.id : `0${e.target.id}`;
                 }
             } else if (e.target.id === '0') {
                 if (num1) {
@@ -38,7 +38,7 @@ numbersBtns.forEach((button) => {
 
             if (e.target.id === '.') {
                 if (!num2.toString().includes('.')) {
-                    num2 += e.target.id;
+                    num2 += (num2) ? e.target.id : `0${e.target.id}`;
                 }
             } else if (e.target.id === '0') {
                 if (num1) {
