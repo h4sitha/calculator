@@ -27,6 +27,8 @@ numbersBtns.forEach((button) => {
             } else if (e.target.id === '0') {
                 if (num1) {
                     num1 += e.target.id;
+                } else {
+                    num1 = "0";
                 }
             } else {
                 num1 += e.target.id;
@@ -43,6 +45,8 @@ numbersBtns.forEach((button) => {
             } else if (e.target.id === '0') {
                 if (num2) {
                     num2 += e.target.id;
+                } else {
+                    num2 = "0";
                 }
             } else {
                 num2 += e.target.id;
