@@ -22,12 +22,13 @@ numbersBtns.forEach((button) => {
 
 operatorBtns.forEach((button) => {
     button.addEventListener('click', (e) => {
-        console.log(e.target.id);
+        operator = e.target.id;
     })
 })
 
 equalBtn.addEventListener('click', (e) => {
-    console.log(e.target.id);
+    operate(num1, num2, operator);
+    console.log(answer);
 })
 
 clearBtn.addEventListener('click', (e) => {
