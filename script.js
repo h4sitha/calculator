@@ -14,15 +14,32 @@ const backspaceBtn = document.querySelector('#backspace');
 numbersBtns.forEach((button) => {
     button.addEventListener('click', (e) => {
         if (!operator) {
+
             if (answer) {
                 num1 = 0;
                 answer = 0;
             }
-            num1 += e.target.id;
-            updateDisplay (parseInt(num1));
+
+            if (e.target.id === '.') {
+                if (!num1.toString().includes('.')) {
+                    num1 += e.target.id;
+                }
+            } else {
+                num1 += e.target.id;
+            }
+            
+            updateDisplay (parseFloat(num1));
         } else if (operator) {
-            num2 += e.target.id;
-            updateDisplay (parseInt(num2));
+
+            if (e.target.id === '.') {
+                if (!num2.toString().includes('.')) {
+                    num2 += e.target.id;
+                }
+            } else {
+                num2 += e.target.id;
+            }
+
+            updateDisplay (parseFloat(num2));
         }
     })
 })
@@ -58,10 +75,10 @@ clearBtn.addEventListener('click', (e) => {
 backspaceBtn.addEventListener('click', () => {
     if (num1 && !answer) {
         num1 = num1.toString().substring(0, num1.length - 1);
-        updateDisplay (parseInt(num1));
+        updateDisplay (parseFloat(num1));
     } else if (num2) {
         num2 = num2.toString().substring(0, num2.length - 1);
-        updateDisplay (parseInt(num2));
+        updateDisplay (parseFloat(num2));
     }
 })
 
@@ -87,20 +104,20 @@ function operate (num1, num2, operator) {
 }
 
 function add (a, b) {
-    return parseInt(a) + parseInt(b);
+    return parseFloat(a) + parseFloat(b);
 }
 
 function subtract (a, b) {
-    return parseInt(a) - parseInt(b);
+    return parseFloat(a) - parseFloat(b);
 }
 
 function multiply (a, b) {
-    return parseInt(a) * parseInt(b);
+    return parseFloat(a) * parseFloat(b);
 }
 function divide (a, b) {
-    if (parseInt(b) === 0) {
+    if (parseFloat(b) === 0) {
         return "ERROR";
     } else {
-        return parseInt(a) / parseInt(b);
+        return parseFloat(a) / parseFloat(b);
     }
 }
