@@ -44,7 +44,13 @@ clearBtn.addEventListener('click', (e) => {
 })
 
 backspaceBtn.addEventListener('click', () => {
-    console.log("backspace button clicked!");
+    if (!operator) {
+        num1 = num1.substring(0, num1.length - 1);
+        updateDisplay (parseInt(num1));
+    } else {
+        num2 = num2.substring(0, num2.length - 1);
+        updateDisplay (parseInt(num2));
+    }
 })
 
 function updateDisplay (num) {
