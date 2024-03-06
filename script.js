@@ -14,6 +14,10 @@ const backspaceBtn = document.querySelector('#backspace');
 numbersBtns.forEach((button) => {
     button.addEventListener('click', (e) => {
         if (!operator) {
+            if (answer) {
+                num1 = 0;
+                answer = 0;
+            }
             num1 += e.target.id;
             updateDisplay (parseInt(num1));
         } else if (operator) {
@@ -30,7 +34,6 @@ operatorBtns.forEach((button) => {
 })
 
 equalBtn.addEventListener('click', (e) => {
-
     if (num2) {
         operate(num1, num2, operator);
         updateDisplay(answer);
@@ -98,6 +101,6 @@ function divide (a, b) {
     if (parseInt(b) === 0) {
         return "ERROR";
     } else {
-    return parseInt(a) / parseInt(b);
+        return parseInt(a) / parseInt(b);
     }
 }
