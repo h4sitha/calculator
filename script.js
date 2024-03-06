@@ -41,8 +41,8 @@ numbersBtns.forEach((button) => {
                     num2 += (num2) ? e.target.id : `0${e.target.id}`;
                 }
             } else if (e.target.id === '0') {
-                if (num1) {
-                    num1 += e.target.id;
+                if (num2) {
+                    num2 += e.target.id;
                 }
             } else {
                 num2 += e.target.id;
@@ -64,7 +64,7 @@ equalBtn.addEventListener('click', (e) => {
         operate(num1, num2, operator);
         updateDisplay(answer);
         num1 = (answer === "ERROR") ? 0 : answer;
-        num2 = 0;
+        num2 = "";
         operator = "";
     } else if (num1 && operator) {
         operate(num1, num1, operator);
