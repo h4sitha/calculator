@@ -113,7 +113,11 @@ backspaceBtn.addEventListener('click', () => {
 })
 
 function updateDisplay (num) {
-    display.textContent = num;
+    if (num.toString().length < 10) { 
+        display.textContent = num;
+    } else {
+        display.textContent = num.toString().substring(0, 12);
+    }
 }
 
 function operate (num1, num2, operator) {
