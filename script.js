@@ -27,14 +27,16 @@ numbersBtns.forEach((button) => {
             } else if (e.target.id === '0') {
                 if (num1) {
                     num1 += e.target.id;
-                } else {
-                    num1 = "0";
-                }
+                } 
             } else {
                 num1 += e.target.id;
             }
             
-            updateDisplay (num1);
+            if (num1) {
+                updateDisplay (num1);
+            } else {
+                updateDisplay (0);
+            }
             
         } else if (operator) {
 
@@ -45,14 +47,16 @@ numbersBtns.forEach((button) => {
             } else if (e.target.id === '0') {
                 if (num2) {
                     num2 += e.target.id;
-                } else {
-                    num2 = "0";
                 }
             } else {
                 num2 += e.target.id;
             }
 
-            updateDisplay (num2);
+            if (num2) {
+                updateDisplay (num2);
+            } else {
+                updateDisplay (0);
+            }
         }
     })
 })
