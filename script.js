@@ -13,7 +13,7 @@ const backspaceBtn = document.querySelector('#backspace');
 
 numbersBtns.forEach((button) => {
     button.addEventListener('click', (e) => {
-        if (!operator) {
+        if (!operator && answer !== "ERROR") {
 
             if (answer) {
                 num1 = "";
@@ -38,7 +38,7 @@ numbersBtns.forEach((button) => {
                 updateDisplay (0);
             }
             
-        } else if (operator) {
+        } else if (operator && answer !== "ERROR") {
 
             if (e.target.id === '.') {
                 if (!num2.toString().includes('.')) {
@@ -73,6 +73,9 @@ operatorBtns.forEach((button) => {
 equalBtn.addEventListener('click', runCalculation)
 
 function runCalculation () {
+    if (answer === "ERROR") {
+        return null;
+    }
     if (!num1) {
         num1 = "0";
     }
@@ -80,10 +83,10 @@ function runCalculation () {
         num2 = "0";
     }
     console.log(num1, num2, operator);
-    if (num1 && operator &&num2) {
+    if (num1 && operator && num2) {
         operate(num1, num2, operator);
         updateDisplay(answer);
-        num1 = (answer === "ERROR") ? 0 : answer;
+        num1 = answer;
         num2 = "";
         operator = "";
     } else if (num1 && operator) {
@@ -98,6 +101,7 @@ clearBtn.addEventListener('click', (e) => {
     num1 = "";
     num2 = "";
     operator = "";
+    answer = "";
     updateDisplay(0);
 })
 
