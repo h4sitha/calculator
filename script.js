@@ -23,7 +23,7 @@ numbersBtns.forEach((button) => {
             if (num1 === 0) {
                 num1 = "";
             }
-            
+
             if (e.target.id === '.') {
                 if (!num1.toString().includes('.')) {
                     num1 += (num1) ? e.target.id : `0${e.target.id}`;
@@ -86,7 +86,7 @@ function runCalculation () {
     if (!num2) {
         num2 = "0";
     }
-    console.log(num1, num2, operator);
+    // console.log(num1, num2, operator);
     if (num1 && operator && num2) {
         operate(num1, num2, operator);
         updateDisplay(answer);
