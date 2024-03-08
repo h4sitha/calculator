@@ -20,6 +20,10 @@ numbersBtns.forEach((button) => {
                 answer = "";
             }
 
+            if (num1 === 0) {
+                num1 = "";
+            }
+            
             if (e.target.id === '.') {
                 if (!num1.toString().includes('.')) {
                     num1 += (num1) ? e.target.id : `0${e.target.id}`;
