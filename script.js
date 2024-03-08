@@ -73,7 +73,14 @@ operatorBtns.forEach((button) => {
 equalBtn.addEventListener('click', runCalculation)
 
 function runCalculation () {
-    if (num2) {
+    if (!num1) {
+        num1 = "0";
+    }
+    if (!num2) {
+        num2 = "0";
+    }
+    console.log(num1, num2, operator);
+    if (num1 && operator &&num2) {
         operate(num1, num2, operator);
         updateDisplay(answer);
         num1 = (answer === "ERROR") ? 0 : answer;
